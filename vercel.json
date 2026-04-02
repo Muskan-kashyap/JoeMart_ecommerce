@@ -5,8 +5,8 @@
       "routePrefix": "/",
       "framework": "create-react-app"
     },
-    "backend": {
-      "entrypoint": "backend",
+     "backend": {
+      "entrypoint": "backend/project",
       "routePrefix": "/api"
     }
   }
