@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Poppins:wght@500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg: #eff4f1;
+  --bg-soft: #d5e1da;
+  --panel: #ffffff;
+  --text: #0f172a;
+  --text-muted: #475569;
+  --primary: #143d3a;
+  --primary-soft: #2f6f67;
+  --accent: #f97316;
+  --accent-soft: #f59e0b;
+  --ring: rgba(20, 61, 58, 0.2);
+}
+
+[data-theme='nocturne-sage'] {
+  --bg: #e8f1ed;
+  --bg-soft: #cadfda;
+  --panel: #fdfefe;
+  --text: #0b1a2b;
+  --text-muted: #415766;
+  --primary: #112f4b;
+  --primary-soft: #466a64;
+  --accent: #22c55e;
+  --accent-soft: #38bdf8;
+  --ring: rgba(17, 47, 75, 0.22);
+}
+
+[data-theme='mono-gold'] {
+  --bg: #f4f4f1;
+  --bg-soft: #e8e6de;
+  --panel: #ffffff;
+  --text: #151515;
+  --text-muted: #5b5b5b;
+  --primary: #242424;
+  --primary-soft: #8f7a3f;
+  --accent: #b45309;
+  --accent-soft: #eab308;
+  --ring: rgba(143, 122, 63, 0.28);
+}
+
+[data-theme='coastal-coral'] {
+  --bg: #fff8f3;
+  --bg-soft: #ffe5d7;
+  --panel: #fffefe;
+  --text: #2a1f1c;
+  --text-muted: #7a5d54;
+  --primary: #174e5d;
+  --primary-soft: #e06a4a;
+  --accent: #0ea5e9;
+  --accent-soft: #f97316;
+  --ring: rgba(224, 106, 74, 0.2);
+}
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: radial-gradient(circle at 20% 10%, var(--bg-soft), var(--bg)),
+    radial-gradient(circle at 80% 0%, color-mix(in srgb, var(--accent) 30%, transparent), transparent 55%);
+  color: var(--text);
+  min-height: 100vh;
+}
+
+.app-shell {
+  @apply min-h-screen;
+}
+
+.container-shell {
+  @apply mx-auto max-w-7xl px-4 sm:px-6 lg:px-8;
+}
+
+.glass-panel {
+  background: color-mix(in srgb, var(--panel) 86%, transparent);
+  border: 1px solid color-mix(in srgb, var(--primary) 14%, #ffffff);
+  box-shadow: 0 20px 60px -30px var(--ring);
+}
+
+.btn-primary {
+  @apply rounded-full px-5 py-2.5 text-sm font-semibold text-white transition;
+  background: linear-gradient(120deg, var(--primary), var(--primary-soft));
+}
+
+.btn-primary:hover {
+  transform: translateY(-1px);
+}
+
+.btn-secondary {
+  @apply rounded-full px-4 py-2 text-sm font-medium transition;
+  border: 1px solid color-mix(in srgb, var(--primary) 40%, white);
+  color: var(--primary);
+}
+
+.input {
+  @apply w-full rounded-xl border px-3 py-2.5 text-sm outline-none;
+  border-color: color-mix(in srgb, var(--primary) 26%, white);
+  background-color: color-mix(in srgb, var(--panel) 92%, transparent);
+}
+
+.input:focus {
+  box-shadow: 0 0 0 4px var(--ring);
+}
